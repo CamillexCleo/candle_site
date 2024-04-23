@@ -1,0 +1,9 @@
+.info {
+    background-color: #F7B0E0;
+    padding:1rem;
+    border-radius: 0.5rem;
+}
+.info h4 {
+    color:#FF5400;
+    margin-top:0rem;
+}

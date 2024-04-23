@@ -1,0 +1,42 @@
+[
+   {
+    "CandleName":"TreeSap",
+    "CandleType":"Mold",
+    "image": "pics/candlemold.jpeg",
+    "SizeInOz":"8",
+    "Scent":"vanilla",
+    "PourDate":"10/01/2023"
+   },
+   {
+    "CandleName":"Mini",
+    "CandleType":"Tealight",
+    "image": "pics/tealight.jpeg",
+    "SizeInOz":"1",
+    "Scent":"none",
+    "PourDate":"2/14/2023"
+   },
+   {
+    "CandleName":"SmellMe",
+    "CandleType":"Wax_Melt",
+    "image": "pics/waxmelt.jpeg",
+    "SizeInOz":"5",
+    "Scent":"lavendar",
+    "PourDate":"05/29/2023"
+   },
+   {
+    "CandleName":"Weather_the_Storm",
+    "CandleType":"Container",
+    "image": "pics/container.jpeg",
+    "SizeInOz":"10",
+    "Scent":"Woodsy",
+    "PourDate":"09/20/2023"
+   },
+   {
+      "CandleName":"Night_Out",
+      "CandleType":"Container",
+      "image": "pics/coco1.jpg",
+      "SizeInOz":"5",
+      "Scent":"Jasmine",
+      "PourDate":"03/02/2023"
+   }
+]

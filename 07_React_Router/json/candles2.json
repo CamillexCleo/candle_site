@@ -1,0 +1,42 @@
+[
+    {
+     "CandleName":"Fall Day",
+     "CandleType":"Container",
+     "image": "pics/coco1.jpg",
+     "SizeInOz":"8",
+     "Scent":"Woodsy",
+     "PourDate":"10/11/2023"
+    },
+    {
+     "CandleName":"Hot Chocolate",
+     "CandleType":"Tealight",
+     "image": "pics/syn1.jpg",
+     "SizeInOz":"1",
+     "Scent":"Cocoa",
+     "PourDate":"2/14/2023"
+    },
+    {
+     "CandleName":"French Lilac",
+     "CandleType":"Wax_Melt",
+     "image": "pics/yourcand1.jpg",
+     "SizeInOz":"5",
+     "Scent":"Lilac",
+     "PourDate":"05/29/2023"
+    },
+    {
+     "CandleName":"Weather_the_Storm",
+     "CandleType":"Container",
+     "image": "pics/yourcand3.jpg",
+     "SizeInOz":"10",
+     "Scent":"Woodsy",
+     "PourDate":"09/20/2023"
+    },
+    {
+       "CandleName":"Night_Out",
+       "CandleType":"Container",
+       "image": "pics/coco1.jpg",
+       "SizeInOz":"5",
+       "Scent":"Jasmine",
+       "PourDate":"03/02/2023"
+    }
+ ]

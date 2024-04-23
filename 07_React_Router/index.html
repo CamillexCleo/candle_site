@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<!-- HTML comments like this... -->
+<html>
+  <head>
+    <title>Camille Small's Website</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="style/main.css" rel="stylesheet" type="text/css" />
+    <link href="style/candle.css" rel="stylesheet" type="text/css" />
+
+    <link href="style/dropDown.css" rel="stylesheet" type="text/css" />
+    <link href="style/myDropDown.css" rel="stylesheet" type="text/css" />
+    <!-- <link href="style/comingSoon.css" rel="stylesheet" type="text/css" /> -->
+    <link href="style/blog.css" rel="stylesheet" type="text/css" />
+    <link href="style/info.css" rel="stylesheet" type="text/css" />
+    <link href="style/obj.css" rel="stylesheet" type="text/css" />
+    <link href="style/candList.css" rel="stylesheet" type="text/css" />
+    <link href="style/slideShow.css" rel="stylesheet" type="text/css" />
+    <link href="style/editArea.css" rel="stylesheet" type="text/css" />
+
+
+    <!-- You need these two CDNs to use react, their version numbers must match -->
+    <!-- changed version on 10-20-2022 from 16.3.1 to 18 for react and react-dom -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+    <!-- This CDN lets you use JSX (looks like HTML tags in JS) -->
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+
+    <!-- This CDN lets you use React Routing -->
+    <script src="https://unpkg.com/react-router-dom@5.0.0/umd/react-router-dom.min.js"></script>
+
+    <style></style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <!-- Put JS reusable first (these are called by CGFs or by the page like the dropDown FW). -->
+    <script src="_JS_reusable/dropDownFW.js"></script>
+    <script src="_JS_reusable/MakeObj.js"></script>
+    <script src="_JS_reusable/MakeCand.js"></script>
+    <script src="_JS_reusable/MakeCandList.js"></script>
+    <script src="_JS_reusable/MakeSlideShow.js"></script>
+    <script src="_JS_reusable/ajax.js"></script>
+    <script src="_JS_reusable/MakeEditArea.js"></script>
+    <script src="_JS_reusable/MakeRadio.js"></script>
+    <script src="_JS_reusable/MakeRadioTag.js"></script>
+    <script src="_JS_reusable/MakeTag.js"></script>
+    <script src="_JS_reusable/Validate.js"></script>
+    <script src="_JS_reusable/MakeSelect.js"></script>
+
+
+
+    <!-- JS Content Generating functions (these are called by the router). -->
+    <script src="_JS_CGF/ObjContentNoReact.js"></script>
+    <script src="_JS_CGF/MakeCand_CGF2.js"></script>
+    <script src="_JS_CGF/MakeCandList_CGF.js"></script>
+    <script src="_JS_CGF/SlideShow_CGF.js"></script>
+    <script src="_JS_CGF/CandleEditArea_CGF.js"></script>
+    <script src="_JS_CGF/UserEditArea_CGF.js"></script>
+    <script src="_JS_CGF/twoEditAreas_CGF.js"></script>
+
+
+    <!-- React reusable (these are called by CGFs). -->
+    <script type="text/babel" src="_React_reusable/ConvertEle.js"></script>
+    <script type="text/babel" src="_React_reusable/MakeCandR.js"></script>
+    <script type="text/babel" src="_React_reusable/MakeCandListR.js"></script>
+
+    <!-- React Content Generating functions (these are called by the router) -->
+    <script type="text/babel" src="_React_CGF/Blog.js"></script>
+    <script type="text/babel" src="_React_CGF/Home.js"></script>
+    <script type="text/babel" src="_React_CGF/Info.js"></script>
+    <script type="text/babel" src="_React_CGF/UsersComingSoon.js"></script>
+    <script type="text/babel" src="_React_CGF/MakeCandR_CGF.js"></script>
+    <script type="text/babel" src="_React_CGF/MakeCandListR_CGF.js"></script>
+
+    <!-- Any React scripts (which all have JSX) needs script type="text/babel" -->
+
+    <script type="text/babel">
+      "use strict";
+
+      dropDownFW({
+        dropHeaderStyle: "dropHeader",
+        dropContentStyle: "dropContent",
+        showStyle: "show",
+        hideStyle: "hide",
+      });
+
+      const Link = ReactRouterDOM.Link;
+      const Route = ReactRouterDOM.Route;
+
+      const App = () => (
+        <ReactRouterDOM.HashRouter>
+          <div id="titleNav">
+            <div id="title">Camille Small</div>
+            <div id="nav">
+              <div class="dropDown">
+                <Link to="/home">Home</Link>
+              </div>
+              <div class="dropDown">
+                <Link to="/myInfo">Info</Link>
+              </div>
+
+              <div class="dropDown">
+                <div class="dropHeader"> Search React</div>
+                <div class="dropContent">
+                  <Link to="/CandleR"> React Candle Objects</Link> <br />
+                  <Link to="/CandleListReact">
+                    {" "}
+                    React Candle Object List
+                  </Link>{" "}
+                  <br />
+                </div>
+              </div>
+
+              <div class="dropDown">
+                <div class="dropHeader">Search JS</div>
+                <div class="dropContent">
+                  <Link to="/myObj">My Objects</Link> <br />
+                  <Link to="/mycandle">JS Candle Objects</Link> <br />
+                  <Link to="/newcandleListJS">JS Candle Object List</Link>{" "}
+                  <br />
+                  <Link to="/slideShowJS">SlideShow JS</Link> <br />
+                  <Link to="/editCand">Edit Area</Link> <br />
+
+
+                  <a target="_blank" href="docs/DB_proposal.pdf">
+                    My DB PDF
+                  </a>
+                </div>
+              </div>
+
+              <div class="dropDown">
+                <Link to="/blog">Blog</Link>
+              </div>
+            </div>
+          </div>
+
+          <div id="content">
+            <Route path="/" exact component={Home} />
+            <Route path="/home" component={Home} />
+            <Route path="/myInfo" component={Info} />
+            <Route path="/users" component={UsersComingSoon} />
+            <Route path="/CandleR" component={MakeCand_CGF} />
+            <Route path="/CandleListReact" component={MakeCandListR_CGF} />
+
+            <Route
+              path="/myObj"
+              component={() => <ConvertEle ele={ObjContentNoReact()} />}
+            />
+            <Route
+              path="/mycandle"
+              component={() => <ConvertEle ele={MakeCand_CGF2()} />}
+            />
+            <Route
+              path="/newcandleListJS"
+              component={() => <ConvertEle ele={MakeCandList_CGF()} />}
+            />
+            <Route
+              path="/slideShowJS"
+              component={() => <ConvertEle ele={SlideShow_CGF()} />}
+            />
+            <Route
+              path="/myCandleEdit"
+              component={() => <ConvertEle ele={CandleEditArea_CGF()} />}
+            />
+            <Route
+              path="/myUserEdit"
+              component={() => <ConvertEle ele={UserEditArea_CGF()} />}
+            />
+            <Route
+              path="/editCand"
+              component={() => <ConvertEle ele={twoEditAreas_CGF()} />}
+            />
+            <Route path="/blog" component={Blog} />
+          </div>
+
+          <div id="footer">[Camille Antoinette Small]</div>
+        </ReactRouterDOM.HashRouter>
+      );
+
+      ReactDOM.render(<App />, document.getElementById("root"));
+    </script>
+  </body>
+</html>
